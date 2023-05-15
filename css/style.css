@@ -1,0 +1,324 @@
+#menuToggle {
+  display: block; 
+  position:relative;
+  margin: 30px;
+  border: right;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  }
+  
+  #menuToggle a {
+  text-decoration: none; 
+  color: #fcf9fa;
+  transition: color 0.4s ease;
+  }
+  
+  #menuToggle a:hover { 
+      color: rgb(255, 253, 253);
+   }
+  
+  
+   #menuToggle input {
+   display: block;
+   width: 40px;
+   height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+  
+   cursor: pointer;
+  
+   opacity: 0;
+    /*hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+  
+   -webkit-touch-callout: none;
+   }
+  
+   #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+  
+   background:#cdcdcd; 
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier (0.77, 0.2, 0.05, 1.0);
+    background: 0.5s cubic-bezier (0.77, 0.2, 0.05, 1.0);
+    opacity: 0.55s ease;
+   }
+  
+   #menuToggle span:first-child {
+  transform-origin: 0% 0%;
+   }
+  
+  #menuToggle span:nth-last-child(2) { 
+       transform-origin: 0% 100%;
+   }
+  
+   #menuToggle input:checked~span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+  }
+  
+  #menuToggle input:checked~span:nth-last-child(3) { 
+      opacity: 0; 
+      transform: rotate(0deg) scale (0.2, 0.2);
+  } 
+  
+  #menuToggle input:checked~span:nth-last-child(2) {
+       transform: rotate(-45deg) translate(0, -1px); 
+      }
+  
+  #menu {
+  position: absolute;
+  width: 300px;
+  margin: -50px 0 0 -50px; 
+  padding: 50px;
+  padding-top: 90px;
+  color: white;
+  background: rgba(245, 55, 182, 0.863);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased; 
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%; 
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier (0.77, 0.2, 0.05, 1.0);
+  }
+  
+  #menu li {
+  padding: 10px 0;
+  font-size: 13px;
+  }
+  
+  #menuToggle input:checked~ul { 
+      transform: none;
+  }
+  li a {
+      color: rgb(8, 8, 8);
+      text-decoration:none;
+      display:inline-block;
+  padding: 1px;
+  text-align:end;
+  text-transform:uppercase;   
+  }
+  
+  li a:hover {
+      
+      font-size: 15px;    
+  }
+
+
+
+.head_logo{
+    display: flex;
+    justify-content: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:  #794f63;
+    
+}
+
+#log{
+     display: flex;
+    justify-content: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:  #794f63;
+}
+
+.booking{
+    background-color: #c57f9e7e;
+    margin-top: -12%;
+
+}
+.about{
+    display: flex;
+    align-items: center;
+    margin-top: 15%;
+}
+
+.nothing{
+    margin-bottom: 15%;
+}
+
+.container{
+    margin-top: 2%;
+    color: #503542;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#buy{
+    text-align: center;
+    width: 90px;
+    font-size: larger;
+    color: #c00bc0;
+}
+#buy:hover{
+    background-color: rgba(141, 102, 111, 0.74);
+}
+#new_block{
+  text-align: center;
+  color:  #794f63;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+.ph{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+
+.footer{
+  background-color: #c57f9e7e;
+  display: flex;
+  justify-content: space-around;
+}
+.footer_logo{
+  display: flex;
+  justify-content: left;
+  margin-left: 10%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color:  #794f63;
+  
+}
+
+
+
+
+/* Слайдер: */
+.slider{
+  max-width: 60%;
+  /* Положение элемента устанавливается относительно его исходной позиции: */
+  position: relative;
+  /* Центрируем по горизонтали: */
+  margin: auto;
+  height: 300px;
+}
+
+/* Картинка масштабируется по отношению к родительскому элементу: */
+.slider .item img {
+  /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+/* Кнопки назад и вперёд: */
+.slider .previous, .slider .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+.slider .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* При наведении курсора на кнопки добавляем фон кнопок: */
+.slider .previous:hover,
+.slider .next:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Анимация слайдов: */
+.slider .item {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  /* Устанавливаем и изменяем степень прозрачности: */
+  from {
+      opacity: 0.4
+  }
+  to {
+      opacity: 1
+  }
+}
+
+.otsiv{
+  border: solid 1px #c00bc0;
+  background-color: #f1e5ecd5;
+  color: #160116;
+  margin: 3%;
+  padding: 1%;
+  width: 50%;
+}
+
+.container-fluid .col ul {
+  list-style-type: none;
+}
+
+.container-fluid .col ul li {
+font-weight: bold;
+-webkit-transition: 2s;
+font-size: 14px;
+font-family: inherit;
+padding: 5px 0px 5px 0px;
+cursor: pointer;
+transition: 2s;
+-moz-transition: .25;
+}
+.social ul li {
+display: inline-block; 
+padding-right: 5px !important;
+}
+
+.container-fluid{
+  background-color: #c57f9e7e;
+}
+
+img {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+
+p {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
